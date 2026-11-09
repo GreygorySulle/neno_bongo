@@ -14,10 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: .fromSeed(
-          seedColor: const Color.fromARGB(255, 0, 183, 255),
+          seedColor: const Color.fromARGB(255, 80, 184, 144),
+          // brightness: Brightness.dark,
         ),
       ),
       home: const MyHomePage(title: 'NenoBongo'),
@@ -93,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ],
       //   ),
       // ),
-     
       body: IndexedStack(
         index: _selectedIndex,
         children: [
@@ -129,23 +130,23 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       floatingActionButton: _selectedIndex == 0
-    ? Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          FloatingActionButton(
-            onPressed: _decrementCounter,
-            tooltip: 'Decrement',
-            child: const Icon(Icons.remove),
-          ),
-          const SizedBox(width: 8),
-          FloatingActionButton(
-            onPressed: _incrementCounter,
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-          ),
-        ],
-      )
-    : null,
+          ? Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: 'Decrement',
+                  child: const Icon(Icons.remove),
+                ),
+                const SizedBox(width: 8),
+                FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: const Icon(Icons.add),
+                ),
+              ],
+            )
+          : null,
       // floatingActionButton: Row(
       //   mainAxisSize: MainAxisSize.min,
       //   children: [

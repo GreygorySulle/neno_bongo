@@ -18,7 +18,17 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('You have pushed the button this many times:'),
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25.0),
+              color: Colors.greenAccent.shade400,
+            ),
+            child: const Text(
+              'You have pushed the button this many times:',
+              style: TextStyle(color: Colors.black87),
+            ),
+          ),
           Text('$counter', style: Theme.of(context).textTheme.headlineMedium),
         ],
       ),
