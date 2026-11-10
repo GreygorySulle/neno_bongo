@@ -67,16 +67,22 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: Colors.teal,
 
-      body: IndexedStack(
-        index: _selectedIndex,
+      body: Stack(
+        fit: StackFit.expand,
         children: [
-          HomePage(
-            counter: _counter,
-            onIncrement: _incrementCounter,
-            onDecrement: _decrementCounter,
+          Image.asset('assets/images/background.jpg', fit: BoxFit.cover),
+          IndexedStack(
+            index: _selectedIndex,
+            children: [
+              HomePage(
+                counter: _counter,
+                onIncrement: _incrementCounter,
+                onDecrement: _decrementCounter,
+              ),
+              const SearchPage(),
+              const SettingsPage(),
+            ],
           ),
-          const SearchPage(),
-          const SettingsPage(),
         ],
       ),
       bottomNavigationBar: NavigationBar(

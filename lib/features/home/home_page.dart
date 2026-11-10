@@ -17,9 +17,9 @@ class HomePage extends StatelessWidget {
     return Center(
       child: Container(
         color: Colors.black87,
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: const EdgeInsets.all(16.0),
@@ -51,7 +51,6 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30.0),
                 color: Colors.green,
               ),
-
               child: Text(
                 '$counter',
                 style: Theme.of(context).textTheme.headlineMedium,
